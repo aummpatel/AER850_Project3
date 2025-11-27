@@ -158,7 +158,7 @@ plt.show()
 
 plt.figure()
 plt.imshow(cv2.cvtColor(super_masked_image, cv2.COLOR_BGR2RGB))
-plt.title("Super Masked Image - Final Result", color = 'red')
+plt.title("Super Masked Image - Final Result", color = 'Green')
 plt.axis('off')
 #%%
 
@@ -167,3 +167,12 @@ plt.imshow(cv2.cvtColor(mb_img_rot,cv2.COLOR_BGR2RGB))
 plt.title("Rotated Image")
 plt.axis('off')
 plt.show()
+
+#%%
+# Saving the Extracted Image and Mask used for Extraction
+cv2.imwrite("Project 3 Outputs/Super_Mask.png",super_mask)
+cv2.imwrite("Project 3 Outputs/Extracted_Motherboard_Image.png",super_masked_image)
+
+# Priting shapes of input image as well as the extracted image to ensure resolution is unchanged
+print("Input Image Shape:", mb_img_rot.shape)
+print("Extracted Masked Image Shape:", super_masked_image.shape)
